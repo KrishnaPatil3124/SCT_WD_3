@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Tic-Tac-Toe Web Application</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <h1>Tic-Tac-Toe</h1>
-  <div>
+  <header>
+    <h1><span class="logo">❌⭕</span> Tic-Tac-Toe Game</h1>
+  </header>
+  <div class="mode-buttons">
     <button onclick="startGame(false)">Two Player</button>
     <button onclick="startGame(true)">Play vs Computer</button>
   </div>
-  <div id="board"></div>
-  <div id="status"></div>
+  <div id="board" aria-label="Tic Tac Toe game board" role="grid"></div>
+  <div id="status" aria-live="polite" role="status"></div>
   <button id="restart" onclick="startGame(aiMode)" style="display:none;">Restart</button>
   <script src="script.js"></script>
 </body>
