@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tic-Tac-Toe Web Application</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Tic-Tac-Toe</h1>
+  <div>
+    <button onclick="startGame(false)">Two Player</button>
+    <button onclick="startGame(true)">Play vs Computer</button>
+  </div>
+  <div id="board"></div>
+  <div id="status"></div>
+  <button id="restart" onclick="startGame(aiMode)" style="display:none;">Restart</button>
+  <script src="script.js"></script>
+</body>
+</html>
