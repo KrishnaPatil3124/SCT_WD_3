@@ -1,39 +1,129 @@
+/* Center entire content vertically and horizontally */
 body {
   background: linear-gradient(135deg, #1e1f38, #4b3f72);
   font-family: 'Roboto', sans-serif;
   color: #fefcfb;
-  text-align: center;
   margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
   padding: 20px;
+  text-align: center;
+}
+
+/* Make buttons bigger and responsive */
+button {
+  font-size: 1.5rem;
+  margin: 12px 16px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #6a60aa;
+  color: #fff;
+  box-shadow: 0 4px 10px #2c2750;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  background: #a793e6;
+  transform: translateY(-3px);
+}
+
+button:disabled {
+  background: #a8a7b9;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Board layout with bigger squares and centered */
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 130px);
+  grid-template-rows: repeat(3, 130px);
+  grid-gap: 15px;
+  border: 3px solid #ffd600;
+  border-radius: 18px;
+  padding: 18px;
+  background: #2f2e4a;
+  box-shadow: 0 0 20px #ffd600aa inset;
+  margin: 20px auto;
+}
+
+/* Responsive adjustments for smaller devices */
+@media (max-width: 480px) {
+  button {
+    font-size: 1.25rem;
+    margin: 10px 12px;
+    padding: 12px 22px;
+  }
+  #board {
+    grid-template-columns: repeat(3, 90px);
+    grid-template-rows: repeat(3, 90px);
+    grid-gap: 12px;
+    padding: 15px;
+  }
+  .square {
+    font-size: 3.2rem;
+    line-height: 90px;
+  }
+}
+
+/* Square styling remains same with adjustments for responsiveness */
+
+.square {
+  background: #423f5d;
+  font-weight: 700;
+  color: #ffd600;
+  border-radius: 12px;
+  border: 3px solid #6a60aa;
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+  transition: background 0.25s ease, transform 0.2s ease;
+  box-shadow: 0 4px 15px #0a0a29;
+}
+
+.square:hover:not(:disabled) {
+  background: #5f5aa4;
+  transform: scale(1.07);
+  box-shadow: 0 6px 20px #a793e6;
+}
+
+.square:disabled {
+  cursor: not-allowed;
+  background: #7e7b9c;
+  box-shadow: inset 0 0 15px #67659c;
+  color: #e6da74;
+}
+
+#status {
+  font-size: 1.75rem;
+  margin-bottom: 20px;
+  min-height: 1.8em;
+  font-weight: 600;
+  text-shadow: 2px 2px 6px #000000cc;
+}
+
+/* Header with logo and text is centered */
+header h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 3rem;
+  margin: 0 0 20px 0;
+  color: #ffd600;
+  text-shadow: 2px 2px 4px #000000aa;
   user-select: none;
 }
 
-header h1 {
-  font-family: 'Fredoka One', cursive;
-  font-size: 3.5rem;
-  margin: 0 0 30px 0;
-  color: #ffd600;
-  text-shadow: 2px 2px 4px #000000aa;
-}
-
 .logo {
-  font-size: 3.8rem;
-  margin-right: 12px;
+  font-size: 3.5rem;
+  margin-right: 10px;
   vertical-align: middle;
   animation: pulse 2s infinite alternate;
 }
-
-@keyframes pulse {
-  0% { color: #ff3d00; }
-  100% { color: #4caf50; }
-}
-
-.mode-buttons {
-  margin-bottom: 20px;
-}
-
-button {
-  font-size: 1.25rem;
   margin: 10px 12px;
   padding: 12px 22px;
   border-radius: 10px;
