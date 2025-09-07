@@ -1,0 +1,36 @@
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background: #181726;
+  color: #fff;
+}
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-gap: 8px;
+  margin: 20px auto;
+  width: max-content;
+}
+.square {
+  width: 80px;
+  height: 80px;
+  font-size: 2.5em;
+  background: #222138;
+  border: 2px solid #1cb0f6;
+  color: #fed365;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.square:disabled {
+  background: #42416b;
+  cursor: not-allowed;
+}
+#status {
+  margin: 20px;
+  font-size: 1.5em;
+}
+button {
+  margin: 6px;
+  font-size: 1em;
+  padding: 10px 16px;
+}
